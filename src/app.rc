@@ -1,0 +1,154 @@
+//----------------------------------------------------------------------------
+//  Project SAT
+// 
+//  SUBSYSTEM:    Sa Application
+//  YEAR:		  2006
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "app.rh"
+
+#include "owl\inputdia.rc"
+
+IDM_SDI MENU 
+{
+ MENUITEM SEPARATOR
+ MENUITEM SEPARATOR
+ POPUP "&Method"
+ {
+  MENUITEM "Method &A", CM_METHODA, CHECKED
+  MENUITEM "Method &B", CM_METHODB
+ }
+
+ MENUITEM SEPARATOR
+ MENUITEM SEPARATOR
+ POPUP "Example Formulas"
+ {
+  MENUITEM "Formula 1", CM_FORMULA1
+  MENUITEM "Formula 2", CM_FORMULA2
+  MENUITEM "Formula 3", CM_FORMULA3
+ }
+
+ MENUITEM SEPARATOR
+ MENUITEM SEPARATOR
+ MENUITEM "Calculate Function", CM_RUN
+}
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+
+
+
+
+
+// Table of help hints displayed in the status bar.
+//
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+
+
+// Exception string resources (include/owl/except.rc)
+//
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+
+
+// Validator messages (include/owl/validate.rc)
+//
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+IDI_SDIAPPLICATION ICON "applsdi.ico"
+
+
+// About box.
+//
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+
+IDB_TILE1 BITMAP "tile1.bmp"
+
+
+IDB_TILE2 BITMAP "tile2.bmp"
+
+
+IDB_TILE3 BITMAP "tile3.bmp"
+
+
+IDB_TILE4 BITMAP "tile4.bmp"
+
+
+IDB_TILE5 BITMAP "tile5.bmp"
+
+
+
+
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "\000"
+      VALUE "FileDescription", "Sa for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "Sa\000"
+      VALUE "LegalCopyright", "Copyright © 2006. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "Sa.exe\000"
+      VALUE "ProductName", "Sat\000"
+      VALUE "ProductVersion", "1.0\000"
+      VALUE "SpecialBuild", "Debug Version\000"      
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif
